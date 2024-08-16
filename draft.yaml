@@ -1,0 +1,62 @@
+models:
+  Hero:
+    image: string
+    title: string
+    description: string
+    link1: string
+    link2: string
+    is_active: bolean
+    relationships:
+      hasMany: HeroSubTitle
+
+  HeroSubTitle:
+    text: string
+    relationships:
+      belongsTo: Hero
+
+  Service:
+    image: string
+    descriptio: string
+    icon: string
+    sort: number
+    is_active: boolean
+
+  PortfolioCategory:
+    title: string
+    description: string
+    relationships:
+      hasMany: Portpolio
+
+  Portfolio:
+    title: string
+    description: string
+    image: string
+    link: string
+    is_active: bolean
+    relationships:
+      belongsTo: PortfolioCategory
+
+  Client:
+    image: string
+    name: string
+
+  Team:
+    image: string
+    name: string
+    position: string
+    relationships:
+      hasMany: TeamSocial
+
+  TeamSocial:
+    link: string
+    type: enum:facebook,twiter,linkedin,instagram
+    relationships:
+      belongsTo: Team
+
+  Contact:
+    name: string
+    email: string
+    subject: string
+    message: string
+
+seeders: Hero, HeroSubTitle, Service, PortfolioCategory, Portfolio, Client, Team, TeamSocial, Contact
