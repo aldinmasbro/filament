@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\HeroResource\Pages;
 
 use App\Filament\Resources\HeroResource;
+use App\Models\Hero;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
@@ -15,4 +16,15 @@ class CreateHero extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    //add before create hooks
+    protected function beforeCreate()
+    {
+        //id is_active is true then set all other record to false
+        if ($this->data['is_active']) {
+            //update all hero to inactive
+            Hero::query()->update(['is_active'=>false]);
+        }
+    }
+
 }
