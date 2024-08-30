@@ -17,11 +17,14 @@ class PortfolioResource extends Resource
 {
     protected static ?string $model = Portfolio::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-wallet';
 
     public static function form(Form $form): Form
     {
         return $form
+            ->schema([
+            Forms\Components\Section::make('Service Details')
+            ->description('Isikan Detail Service Section')
             ->schema([
                 Forms\Components\TextInput::make('title')
                     ->required()
@@ -32,15 +35,16 @@ class PortfolioResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\TextInput::make('link')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('is_active')
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('link')
+                //     ->required()
+                //     ->maxLength(255),
+                // Forms\Components\TextInput::make('is_active')
+                //     ->required()
+                //     ->maxLength(255),
                 Forms\Components\Select::make('portfolio_category_id')
                     ->relationship('portfolioCategory', 'title')
                     ->required(),
+            ])
             ]);
     }
 
@@ -48,30 +52,23 @@ class PortfolioResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')
+                    ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('link')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('is_active')
+                    ->html()
+                    ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('portfolioCategory.title')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->badge(),
+
             ])
             ->filters([
                 //
             ])
+            ->reorderable('sort')
+            ->defaultSort('sort', 'asc')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()

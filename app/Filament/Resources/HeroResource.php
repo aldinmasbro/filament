@@ -46,7 +46,6 @@ class HeroResource extends Resource
                     ->image()
                     ->required(),
                 Forms\Components\TextInput::make('title')
-
                     ->required()
                     ->maxLength(255),
                 Forms\Components\RichEditor::make('description')
@@ -63,8 +62,6 @@ class HeroResource extends Resource
                         ->inline(false)
                         ->required()
                 ]),
-
-
             ]),
             Section::make('Hero Sub Title')
             ->description('Isikan Detail Hero Sub Title')

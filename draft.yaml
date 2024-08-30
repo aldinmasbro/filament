@@ -15,9 +15,9 @@ models:
       belongsTo: Hero
 
   Service:
-    image: string
-    descriptio: string
     icon: string
+    title: string
+    description: string
     sort: number
     is_active: boolean
 
@@ -59,4 +59,7 @@ models:
     subject: string
     message: string
 
+
+
 seeders: Hero, HeroSubTitle, Service, PortfolioCategory, Portfolio, Client, Team, TeamSocial, Contact
+

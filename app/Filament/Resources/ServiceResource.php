@@ -6,10 +6,13 @@ use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
+use Filament\Forms\FormsComponent;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -17,26 +20,36 @@ class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+
+    //order the navigation menu inside the group
+    protected static ?int $navigationSort = 10;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
-                Forms\Components\TextInput::make('descriptio')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('icon')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('sort')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
+               Forms\Components\Section::make('Service Details')
+                ->description('Isikan Detail Service Section')
+                ->schema([
+                    Forms\Components\TextInput::make('title')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\RichEditor::make('description')
+                        ->required()
+                        ->maxLength(255),
+
+                //create a split
+                    Forms\Components\Split::make([
+                        Forms\Components\FileUpload::make('icon')
+                            ->image()
+                            ->required(),
+                        Forms\Components\Toggle::make('is_active')
+                            ->inline(false)
+                            ->required(),
+                ])
+
+                ])
             ]);
     }
 
@@ -44,24 +57,20 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('descriptio')
+                Tables\Columns\ImageColumn::make('icon')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('icon')
+                Tables\Columns\TextColumn::make('title')
+                    ->wrap()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('sort')
+                Tables\Columns\TextColumn::make('description')
+                    ->wrap()
+                    ->html()
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\ToggleColumn::make('is_active'),
             ])
+            ->reorderable('sort')
+            ->defaultSort('sort','asc')
             ->filters([
                 //
             ])

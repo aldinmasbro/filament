@@ -17,7 +17,13 @@ class HeroSubTitleResource extends Resource
 {
     protected static ?string $model = HeroSubTitle::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+
+    //add groiping to the filament menu
+    protected static ?string $navigationGroup = 'Heroes Management';
+
+    //order the navigation menu inside the group
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -54,7 +60,7 @@ class HeroSubTitleResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
@@ -75,8 +81,12 @@ class HeroSubTitleResource extends Resource
     {
         return [
             'index' => Pages\ListHeroSubTitles::route('/'),
-            'create' => Pages\CreateHeroSubTitle::route('/create'),
-            'edit' => Pages\EditHeroSubTitle::route('/{record}/edit'),
+            // 'create' => Pages\CreateHeroSubTitle::route('/create'),
+            // 'edit' => Pages\EditHeroSubTitle::route('/{record}/edit'),
         ];
+    }
+    public static function canCreate(): bool
+    {
+        return false;
     }
 }

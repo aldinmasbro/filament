@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('image');
+            $table->integer('sort')->default(0);
             $table->string('link');
             $table->string('is_active');
             $table->foreignId('portfolio_category_id');

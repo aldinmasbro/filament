@@ -1,46 +1,14 @@
 created:
-    - database/factories/HeroFactory.php
-    - database/factories/HeroSubTitleFactory.php
-    - database/factories/ServiceFactory.php
-    - database/factories/PortfolioCategoryFactory.php
-    - database/factories/PortfolioFactory.php
-    - database/factories/ClientFactory.php
-    - database/factories/TeamFactory.php
-    - database/factories/TeamSocialFactory.php
-    - database/factories/ContactFactory.php
-    - database/migrations/2024_08_15_071240_create_heroes_table.php
-    - database/migrations/2024_08_15_071241_create_hero_sub_titles_table.php
-    - database/migrations/2024_08_15_071242_create_services_table.php
-    - database/migrations/2024_08_15_071243_create_portfolio_categories_table.php
-    - database/migrations/2024_08_15_071244_create_portfolios_table.php
-    - database/migrations/2024_08_15_071245_create_clients_table.php
-    - database/migrations/2024_08_15_071246_create_teams_table.php
-    - database/migrations/2024_08_15_071247_create_team_socials_table.php
-    - database/migrations/2024_08_15_071248_create_contacts_table.php
-    - app/Models/Hero.php
-    - app/Models/HeroSubTitle.php
-    - app/Models/Service.php
-    - app/Models/PortfolioCategory.php
-    - app/Models/Portfolio.php
-    - app/Models/Client.php
-    - app/Models/Team.php
-    - app/Models/TeamSocial.php
-    - app/Models/Contact.php
-    - database/seeders/HeroSeeder.php
-    - database/seeders/HeroSubTitleSeeder.php
-    - database/seeders/ServiceSeeder.php
-    - database/seeders/PortfolioCategorySeeder.php
-    - database/seeders/PortfolioSeeder.php
-    - database/seeders/ClientSeeder.php
-    - database/seeders/TeamSeeder.php
-    - database/seeders/TeamSocialSeeder.php
-    - database/seeders/ContactSeeder.php
+    - database/factories/AbsenFactory.php
+    - database/migrations/2024_08_27_003359_create_absens_table.php
+    - app/Models/Absen.php
+    - database/seeders/AbsenSeeder.php
 models:
     GuestBook: { name: string, email: string, message: text }
     Hero: { image: string, title: string, description: string, link1: string, link2: string, is_active: bolean, relationships: { hasMany: HeroSubTitle } }
     User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
     What: { image: string, title: string, subtitle: string, link1: string, link2: string, is_active: bolean }
-    Service: { image: string, descriptio: string, icon: string, sort: number, is_active: boolean }
+    Service: { icon: string, title: string, description: string, sort: number, is_active: boolean }
     HeroSubTitle: { text: string, relationships: { belongsTo: Hero } }
     PortfolioCategory: { title: string, description: string, relationships: { hasMany: Portpolio } }
     Portfolio: { title: string, description: string, image: string, link: string, is_active: bolean, relationships: { belongsTo: PortfolioCategory } }
@@ -48,3 +16,4 @@ models:
     Team: { image: string, name: string, position: string, relationships: { hasMany: TeamSocial } }
     TeamSocial: { icon: string, type: 'enum:facebook,twiter,linkedin,instagram', relationships: { belongsTo: Team } }
     Contact: { name: string, email: string, subject: string, message: string }
+    Absen: { nip: string, nama: string, jumlahkerja: integer, normal: integer, telat: integer, cepatpulang: integer }

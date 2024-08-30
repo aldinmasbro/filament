@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('descriptio');
             $table->string('icon');
-            $table->string('sort');
+            $table->string('title');
+            $table->string('description');
+            $table->integer('sort')->default(0);
             $table->boolean('is_active');
             $table->timestamps();
         });
@@ -28,5 +28,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('services');
+
+        Schema::table('services', function (Blueprint $table) {
+            $table->string('short')->default(null)->change(); // Sesuaikan untuk rollback
+        });
     }
+
 };
