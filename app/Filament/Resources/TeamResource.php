@@ -113,9 +113,9 @@ class TeamResource extends Resource
     {
         return [
             'index' => Pages\ListTeams::route('/'),
-            //dimatikan untuk tampilan kedepan sepeti model
-            // 'create' => Pages\CreateTeam::route('/create'),
-            // 'edit' => Pages\EditTeam::route('/{record}/edit'),
+            //dimatikan code di bawah ini untuk tampilan kedepan sepeti model
+            'create' => Pages\CreateTeam::route('/create'),
+            'edit' => Pages\EditTeam::route('/{record}/edit'),
         ];
     }
 }
