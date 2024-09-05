@@ -68,9 +68,14 @@ class HeroResource extends Resource
             ->schema([
                 Repeater::make('heroSubTitles')
                 ->relationship()
+
                 ->schema([
                     TextInput::make('text')
+                        ->required()
+
                 ])
+                ->cloneable(true)
+                ->grid(2)
             ])
 
             ]);

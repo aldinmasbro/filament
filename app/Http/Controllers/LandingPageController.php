@@ -11,9 +11,11 @@ class LandingPageController extends Controller
     public function index()
     {
         //get one hero that is active
-        $hero = Hero::where('is_active', 1)->first();
-        return view('layout.web', compact(
-            'her',
+        $hero = Hero::where('is_active', true)
+            ->with('heroSubTitles')
+            ->first();
+            return view('layout.web', compact(
+                'hero',
         ));
         // $hero = \App\Models\Hero::where('is_active', true)->first();
         // [$mainTitle, $animationTitle] = explode('#', $hero->title);
