@@ -80,7 +80,7 @@ class TeamResource extends Resource
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
-                    ->description(fn(Team $record): string => $record->teamSocials->pluck('link')->join(', '))->wrap(),
+                    ->description(fn(Team $record): string => $record->teamSocials->pluck('link')->join(','))->wrap(),
                 Tables\Columns\TextColumn::make('position')
                     ->wrap()
                     ->searchable(),

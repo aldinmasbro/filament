@@ -16,7 +16,7 @@ License: You must have a valid license from official store to legally use the th
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Tailwind One Page Template | Tailone</title>
+    <title>Bkkbn | Sulbar</title>
     <meta name="description" content="Tailwind One Page Template">
 
     <!-- Development css -->
@@ -50,22 +50,22 @@ License: You must have a valid license from official store to legally use the th
 
         <!-- start services -->
         <div id="services" class="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
-            {{-- @include('content.services') --}}
+            @include('content.services')
         </div><!-- End Service -->
 
         <!-- Portfolio Content -->
         <div id="portfolio" class="section relative z-0 py-12 md:py-16 bg-white">
-            {{-- @include('content.portfolio') --}}
+            @include('content.portfolio')
         </div><!--  End Content -->
 
         <!-- start clients -->
         <div id="clients" class="section relative py-8 bg-white dark:bg-gray-800">
-            {{-- @include('content.clients') --}}
+            @include('content.clients')
         </div><!-- End brand-->
 
         <!-- Team start -->
         <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
-            {{-- @include('content.teams') --}}
+            @include('content.teams')
         </div>
         <!-- End Team-->
 
@@ -77,7 +77,7 @@ License: You must have a valid license from official store to legally use the th
 
     <!-- =========={ FOOTER }==========  -->
     <footer class="bg-gray-50 text-gray-700">
-        {{-- @include('content.footer') --}}
+        @include('content.footer')
     </footer><!-- end footer -->
 
     <!-- =========={ SCROLL TO TOP }==========  -->

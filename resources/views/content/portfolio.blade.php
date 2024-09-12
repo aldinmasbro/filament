@@ -28,7 +28,7 @@
                     <div
                         class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-black text-center">
                         <h3 class="text-base leading-normal font-semibold my-1 text-white">{{ $portfolio->title }}</h3>
-                        <small class="d-block">{{ $portfolio->category->name }}</small>
+                        <small class="d-block">{{ $portfolio->portfolioCategory->title }}</small>
                     </div>
                 </a>
             </div>

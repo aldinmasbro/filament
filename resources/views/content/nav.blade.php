@@ -34,12 +34,10 @@
                         <a class="active block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#hero">Home</a>
                     </li>
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#services">What
-                            we do</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://raporpkb.bkkbnsulbar.id/login">Raport_Pkb</a>
                     </li>
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#portfolio">Our
-                            works</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="http://profiledesa.bkkbnsulbar.id/">Profile_Desa</a>
                     </li>
                     <li class="relative hover:text-black">
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#clients">Clients</a>

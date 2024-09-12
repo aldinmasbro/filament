@@ -24,7 +24,8 @@
                 <div
                     class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
                     <div class="inline-block text-gray-900 mb-4">
-                        <img src="{{ Storage::url($service->icon) }}" alt="creative agency">
+                        {{-- <img src="{{ Storage::url($service->icon) }}" alt="creative agency"> --}}
+                        <img src="{{ Storage::url($service->icon) }}" alt="{{ $service->title }}">
                     </div>
                     <h3 class="text-lg leading-normal mb-2 font-semibold text-black">{{ $service->title }}</h3>
                     <p class="text-gray-500">{{ $service->description }}</p>

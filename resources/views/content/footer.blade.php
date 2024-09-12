@@ -4,10 +4,13 @@
         <div class="flex flex-wrap flex-row lg:justify-between -mx-3">
             <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
                 <div class="flex items-center mb-2">
-                    <span class="text-3xl leading-normal mb-2 font-bold text-gray-800 mt-2">Tailone</span>
+                    <span class="text-2xl leading-normal mb-2 font-bold text-gray-900 mt-2">BKKBN | SULBAR</span>
                     <!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
                 </div>
-                <p>Tailwind One Page Template for build One page landing page.</p>
+                <span class="text-1xl leading-normal mb-2 font-bold text-gray-900 mt-2">Alamat</span>
+                <p>Jl. Abdulmalik Pattana Endeng Komplek Gubernur - Mamuju 91511</p>
+               <span class="text-1xl leading-normal mb-2 font-bold text-gray-900 mt-2">Email</span>
+               <p>sulbar@bkkbn.go.id</p>
                 <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
                     <!--facebook-->
                     <li class="inline-block">
@@ -108,7 +111,7 @@
     <div class="container xl:max-w-6xl mx-auto px-4 py-4 border-t border-gray-200 border-opacity-10">
         <div class="row">
             <div class="col-12 col-md text-center">
-                <p class="d-block my-3">Copyright © Your Company | All rights reserved.</p>
+                <p class="d-block my-3">Copyright © 2024 | Perwakilan Bkkbn Sulawesi Barat | All rights reserved.</p>
             </div>
         </div>
     </div>
