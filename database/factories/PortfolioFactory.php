@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Portfolio;
+use Illuminate\Support\Str;
 use App\Models\PortfolioCategory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
 
 class PortfolioFactory extends Factory
 {
@@ -21,10 +22,11 @@ class PortfolioFactory extends Factory
      */
     public function definition(): array
     {
+        $this->faker->addProvider(FakerPicsumImagesProvider::class);
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
-            'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->imageUrl(width: 800, height: 600),
             'link' => $this->faker->word(),
             'is_active' => $this->faker->word(),
             'portfolio_category_id' => PortfolioCategory::factory(),

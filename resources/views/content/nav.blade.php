@@ -40,10 +40,11 @@
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="http://profiledesa.bkkbnsulbar.id/">Profile_Desa</a>
                     </li>
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#clients">Clients</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://siperindu.online/popclocksulbar/">Popclock_Sulbar</a>
                     </li>
+
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#team">Team</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://evaluasi.bkkbnsulbar.id/">Evaluasi_Program</a>
                     </li>
                     <li class="relative hover:text-black">
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#contact">Contact</a>

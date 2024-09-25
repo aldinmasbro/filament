@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Team;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
 
 class TeamFactory extends Factory
 {
@@ -20,8 +21,9 @@ class TeamFactory extends Factory
      */
     public function definition(): array
     {
+        $this->faker->addProvider(FakerPicsumImagesProvider::class);
         return [
-            'image' => $this->faker->word(),
+            'image' => $this->faker->imageUrl(width: 800, height: 600),
             'name' => $this->faker->name(),
             'position' => $this->faker->word(),
         ];

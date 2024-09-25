@@ -58,6 +58,10 @@ License: You must have a valid license from official store to legally use the th
             @include('content.portfolio')
         </div><!--  End Content -->
 
+         <div id="popclock" class="section relative z-0 py-12 md:py-16 bg-white">
+            {{-- @include('content.popclock') --}}
+        </div><!--  End Content -->
+
         <!-- start clients -->
         <div id="clients" class="section relative py-8 bg-white dark:bg-gray-800">
             @include('content.clients')

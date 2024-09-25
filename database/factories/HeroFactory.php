@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Hero;
+use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
 
 class HeroFactory extends Factory
 {
@@ -20,8 +21,9 @@ class HeroFactory extends Factory
      */
     public function definition(): array
     {
+        $this->faker->addProvider(FakerPicsumImagesProvider::class);
         return [
-            'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->imageUrl(width: 800, height: 600),
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
             'link1' => $this->faker->url(),
