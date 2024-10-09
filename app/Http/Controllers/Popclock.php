@@ -25,9 +25,9 @@ class Popclock extends Controller
             $dataKelahiran = $titles[1];
             $dataKematian = $titles[2];
         
-            $titles[0] = 'Jumlah Penduduk Saat Ini: ' . $dataPenduduk;
-            $titles[1] = 'Jumlah Kelahiran Tahun Ini: ' . $dataKelahiran;
-            $titles[2] = 'Jumlah Kematian Tahun Ini: ' . $dataKematian;
+            $titles[0] = 'Jumlah Penduduk Saat Ini : ' . $dataPenduduk;
+            $titles[1] = 'Jumlah Kelahiran Tahun Ini : ' . $dataKelahiran;
+            $titles[2] = 'Jumlah Kematian Tahun Ini : ' . $dataKematian;
         }
 
         HeroSubTitle::where('hero_id', 2)->delete();
