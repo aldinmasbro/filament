@@ -17,6 +17,9 @@ class LandingPageController extends Controller
     //
     public function index()
     {
+        $popclock = new Popclock();
+        $popclock->scrape();
+        
         //get one hero that is active
         $hero = Hero::where('is_active', true)
             ->with('heroSubTitles')
