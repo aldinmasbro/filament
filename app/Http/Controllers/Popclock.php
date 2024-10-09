@@ -34,7 +34,7 @@ class Popclock extends Controller
 
         foreach ($titles as $title) {
             HeroSubTitle::create([
-                'hero_id' => 1, // Pastikan hero_id sesuai
+                'hero_id' => 2, // Pastikan hero_id sesuai
                 'text' => $title,
             ]);
         }
