@@ -37,14 +37,14 @@
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://raporpkb.bkkbnsulbar.id/login">Raport_Pkb</a>
                     </li>
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="http://profiledesa.bkkbnsulbar.id/">Profile_Desa</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#team">Team</a>
                     </li>
-                    <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://siperindu.online/popclocksulbar/">Popclock_Sulbar</a>
-                    </li>
+                    {{-- <li class="relative hover:text-black">
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#teams">Teams</a>
+                    </li> --}}
 
                     <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://evaluasi.bkkbnsulbar.id/">Evaluasi_Program</a>
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#services">Program</a>
                     </li>
                     <li class="relative hover:text-black">
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#contact">Contact</a>
