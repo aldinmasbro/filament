@@ -42,21 +42,7 @@ class LandingPageController extends Controller
         //get all teams with team social
         $teams = Team::with('teamSocials')
             ->get();
-        //dd($teams);
 
-        //get all popclock
-        // $popclock= new Popclock();
-        // $response = $popclock->request('GET', 'https://siperindu.online/popclocksulbar');
-        // $html = (string) $response->getBody();
-        // $dom = new \DOMDocument();
-        // @$dom->loadHTML($html);
-        // $titles = [];
-        // foreach ($dom->getElementsByTagName('h1') as $node) {
-        //     $titles[] = $node->textContent;
-        // }
-
-
-        //return view('scraped_results', ['titles' => $titles]);
         return view(
             'layout.web',
             compact(
