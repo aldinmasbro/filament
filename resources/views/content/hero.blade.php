@@ -50,7 +50,7 @@
                         <polyline points="112 160 256 272 400 160"
                             style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
                     </svg>
-                    Download Now
+                    Popclock Sulbar
                 </a>
             </div>
         </div>
