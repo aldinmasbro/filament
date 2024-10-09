@@ -30,7 +30,7 @@ class Popclock extends Controller
             $titles[2] = 'Jumlah Kematian Tahun Ini: ' . $dataKematian;
         }
 
-        HeroSubTitle::where('hero_id', 1)->delete();
+        HeroSubTitle::where('hero_id', 2)->delete();
 
         foreach ($titles as $title) {
             HeroSubTitle::create([
