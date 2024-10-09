@@ -24,7 +24,6 @@ class LandingPageController extends Controller
         $hero = Hero::where('is_active', true)
             ->with('heroSubTitles')
             ->first();
-        dd($popclock);
         dd($hero);
 
         //get all active service ordet by sort
