@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HeroSubTitle;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
@@ -18,7 +19,26 @@ class Popclock extends Controller
         foreach ($dom->getElementsByTagName('h1') as $node) {
             $titles[] = $node->textContent;
         }
-        //dd($titles[0]);
-        return view('content.popclock', ['titles' => $titles]);
+
+        if (count($titles) >= 3) {
+            $dataPenduduk = $titles[0];
+            $dataKelahiran = $titles[1];
+            $dataKematian = $titles[2];
+        
+            $titles[0] = 'Jumlah Penduduk Saat Ini: ' . $dataPenduduk;
+            $titles[1] = 'Jumlah Kelahiran Tahun Ini: ' . $dataKelahiran;
+            $titles[2] = 'Jumlah Kematian Tahun Ini: ' . $dataKematian;
+        }
+
+        HeroSubTitle::where('hero_id', 1)->delete();
+
+        foreach ($titles as $title) {
+            HeroSubTitle::create([
+                'hero_id' => 1, // Pastikan hero_id sesuai
+                'text' => $title,
+            ]);
+        }
+
+        return $titles;
     }
 }
