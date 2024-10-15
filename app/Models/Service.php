@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Service extends Model
 {
@@ -31,4 +33,19 @@ class Service extends Model
         'id' => 'integer',
         'is_active' => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::updating(function ($service) {
+            if ($service->isDirty('icon') && ($service->getOriginal('icon') !== null)) {
+               Storage::disk('public')->delete($service->getOriginal('icon'));
+            }
+        });
+
+        static::deleting(function ($service){
+            Storage::disk('public')->delete($service->icon);
+        });
+
+    }
 }

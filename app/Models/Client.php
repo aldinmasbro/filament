@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Client extends Model
 {
@@ -27,4 +28,18 @@ class Client extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::updating(function ($client) {
+            if ($client->isDirty('image') && ($client->getOriginal('image') !== null)) {
+                Storage::disk('public')->delete($client->getOriginal('image'));
+            }
+        });
+
+        static::deleting(function ($client) {
+            Storage::disk('public')->delete($client->image);
+        });
+}
 }

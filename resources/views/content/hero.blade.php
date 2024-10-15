@@ -20,7 +20,7 @@
                             ]
                             }'></span>
                     </h1>
-                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">{{ $hero->description }}</p>
+                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">{{ strip_tags($hero->description) }}</p>
                 </div>
                 <a class="py-2.5 px-10 inline-block text-center leading-normal text-gray-900 bg-white border-b border-gray-100 hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4"
                     href="{{ $hero->link1 }}">
