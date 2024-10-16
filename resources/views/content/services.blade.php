@@ -28,7 +28,7 @@
                         <img src="{{ Storage::url($service->icon) }}" alt="{{ $service->title }}">
                     </div>
                     <h3 class="text-lg leading-normal mb-2 font-semibold text-black">{{ $service->title }}</h3>
-                    <p class="text-gray-500">{{ $service->description }}</p>
+                    <p class="text-gray-500">{{ strip_tags ($service->description) }}</p>
                 </div><!-- end service block -->
             </div>
         @endforeach
