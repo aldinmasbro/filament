@@ -33,15 +33,33 @@
                     <li class="relative hover:text-black">
                         <a class="active block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#hero">Home</a>
                     </li>
-                    <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="https://raporpkb.bkkbnsulbar.id/login">Raport_Pkb</a>
+
+                    <li class="relative dropdown">
+                        <a href="#" class="block py-3 lg:py-7 px-6 border-b-2 border-transparent dropdown-toggle"
+                            onclick="toggleDropdown(event)">Info</a>
+                        <ul
+                            class="dropdown-menu hidden text-gray-700 shadow rounded mt-3 py-3 bg-white w-full absolute left-0">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Raport Pkb</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Evaluasi Sdm</a></li>
+                        </ul>
                     </li>
+
+
+                    <li class="relative hover:text-black">
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent"
+                            href="https://raporpkb.bkkbnsulbar.id/login">Raport_Pkb</a>
+                    </li>
+
+
+                    <li class="flex lg:hidden">
+                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent"
+                            href="https://raporpkb.bkkbnsulbar.id/login">Raport_Pkb</a>
+                    </li>
+
                     <li class="relative hover:text-black">
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#team">Team</a>
                     </li>
-                    {{-- <li class="relative hover:text-black">
-                        <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#teams">Teams</a>
-                    </li> --}}
+
 
                     <li class="relative hover:text-black">
                         <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#services">Program</a>
@@ -51,6 +69,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
 </nav>
